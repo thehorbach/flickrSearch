@@ -41,6 +41,22 @@ extension FlickrPhotosViewController {
         
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FlickrPhotoHeaderView", for: indexPath) as! FlickrPhotoHeaderView
+            headerView.sectionTitleLabel.text = searches[(indexPath as NSIndexPath).section].searchTerm
+            
+            return headerView
+            
+        default:
+            assert(false, "Unexpected element kind")
+        }
+        
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

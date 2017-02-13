@@ -19,13 +19,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vjC-2h-qzx">
                             <size key="itemSize" width="200" height="200"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="90"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="jJT-cc-pVe" customClass="FlickrPhotoCell" customModule="FlickrSearch" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="90" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -47,6 +47,26 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrPhotoHeaderView" id="Son-qI-AAy" customClass="FlickrPhotoHeaderView" customModule="FlickrSearch" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-sY-JWK">
+                                    <rect key="frame" x="149" y="26.5" width="77.5" height="38.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="4Gv-sY-JWK" firstAttribute="centerX" secondItem="Son-qI-AAy" secondAttribute="centerX" id="Tmw-hP-GBj"/>
+                                <constraint firstItem="4Gv-sY-JWK" firstAttribute="centerY" secondItem="Son-qI-AAy" secondAttribute="centerY" id="imV-Tj-sr8"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="sectionTitleLabel" destination="4Gv-sY-JWK" id="cDM-UW-Jdf"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="tJP-6a-udR" id="gh4-BY-0pA"/>
                             <outlet property="delegate" destination="tJP-6a-udR" id="g6h-nJ-BFU"/>
@@ -55,7 +75,7 @@
                     <navigationItem key="navigationItem" id="rFh-qS-BuG">
                         <nil key="title"/>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" id="iFz-do-Fq7">
-                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <rect key="frame" x="113" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
